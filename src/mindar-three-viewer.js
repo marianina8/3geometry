@@ -2,10 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import { MindARThree } from 'mind-ar/dist/mindar-image-three.prod.js';
 import * as THREE from 'three';
 
+const NETLIFY_URL = 'https://sunny-dolphin-85c5be.netlify.app/';
 const targets = [
-  { name: 'lion', target: 'assets/lionhead.mind', video: 'assets/lionhead.mp4' },
-  { name: 'bee', target: 'assets/bee.mind', video: 'assets/bee.mp4' },
-  { name: 'elephant', target: 'assets/elephant.mind', video: 'assets/elephant.mp4' },
+  { name: 'lion', target: 'lionhead.mind', video: 'lionhead.mp4' },
+  { name: 'bee', target: 'bee.mind', video: 'bee.mp4' },
+  { name: 'elephant', target: 'elephant.mind', video: 'elephant.mp4' },
 ];
 
 
@@ -17,7 +18,7 @@ const MindARViewer = () => {
 
       const mindarThree = new MindARThree({
         container: containerRef.current,
-        imageTargetSrc: entry.target,
+        imageTargetSrc: NETLIFY_URL + entry.target,
         uiLoading: false,
         uiScanning: false,
         uiError: false,
@@ -26,7 +27,7 @@ const MindARViewer = () => {
       const { renderer, scene, camera } = mindarThree;
 
       const video = document.createElement("video");
-      video.src = entry.video;
+      video.src = NETLIFY_URL + entry.video;
       video.crossOrigin = "anonymous";
       video.loop = true;
       video.muted = true;
