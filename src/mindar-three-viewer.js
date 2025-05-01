@@ -4,6 +4,7 @@ import * as THREE from 'three';
 
 const targets = [
   { name: 'lion', target: 'assets/lionhead.mind', video: 'assets/lionhead.mp4' },
+  { name: 'bee', target: 'assets/bee.mind', video: 'assets/bee.mp4' },
 ];
 
 
