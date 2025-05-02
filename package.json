@@ -16,6 +16,9 @@
     "three": "^0.150.1",
     "web-vitals": "^1.0.1"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "react-scripts start",
     "start-https": "HTTPS=true react-scripts start",
